@@ -1,0 +1,32 @@
+.wave-header {
+    min-height: 100vh;
+    width: 100%;
+    background: #D9D9D9;
+    position: relative;
+    overflow: hidden; /* Ensure the overflow is hidden */
+}
+
+.wave-header::before,
+.wave-header::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px; /* Adjust the height as needed for the wave */
+    background: inherit;
+    bottom: -50px; /* Adjust the position to overlap with the bottom */
+    pointer-events: none; /* Ensure these pseudo-elements are not clickable */
+}
+
+.wave-header::before {
+    left: 0;
+    background: linear-gradient(to right, transparent, blue); /* Adjust the gradient direction */
+    border-radius: 50% 50% 0 0; /* Adjust the border-radius for the top wave */
+    top: -50px; /* Adjust the position to overlap with the top */
+}
+
+.wave-header::after {
+    right: 0;
+    background: linear-gradient(to left, transparent, blue); /* Adjust the gradient direction */
+    border-radius: 0 0 50% 50%; /* Adjust the border-radius for the bottom wave */
+}
+.b
