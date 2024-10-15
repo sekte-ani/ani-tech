@@ -1,4 +1,4 @@
-@extends('LandingPage.index')
+@extends('landingPage.index')
 
 @section('title', 'Ani - Tech')
 

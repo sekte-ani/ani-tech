@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('LandingPage/section/home');
+    return view('landingPage.section.home');
 });
