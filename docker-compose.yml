@@ -15,7 +15,7 @@ services:
       networks:
         - anitech
   db:
-      image: mysql:lts
+      image: mysql:8.1
       container_name: anitech-db
       restart: unless-stopped
       environment:
