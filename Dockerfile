@@ -33,7 +33,7 @@ RUN composer install --no-scripts --no-progress --prefer-dist
 COPY . .
 
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
-RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+RUN chmod -R 777 /var/www/storage /var/www/bootstrap/cache
 
 EXPOSE 9000
 
