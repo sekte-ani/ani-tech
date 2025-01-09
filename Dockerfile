@@ -26,7 +26,7 @@ RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd zip intl
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Update sistem dan tambahkan Node.js LTS terbaru
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g npm@latest
 
