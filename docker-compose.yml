@@ -6,11 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     image: laravel-app
-    container_name: website-ani-laravel
+    container_name: anitech-app
     restart: unless-stopped
     working_dir: /var/www
-    expose:
-      - 8000
     volumes:
       - .:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
@@ -19,33 +17,23 @@ services:
 
   web:
     image: nginx:alpine
-    container_name: website-ani-nginx
+    container_name: anitech-nginx
     restart: unless-stopped
     ports:
-      - 80:80
-      - 443:443
+      - "8000:80"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+      - .:/var/www
+      - ./nginx/conf.d:/etc/nginx/conf.d
     networks:
       - laravel
 
-  certbot:
-      image: certbot/certbot
-      container_name: website-ani-certbot
-      volumes: 
-        - ./certbot/conf:/etc/letsencrypt
-        - ./certbot/www:/var/www/certbot
-      command: certonly --webroot -w /var/www/certbot --keep-until-expiring --email aniteknologi@gmail.com -d anitech.id --agree-tos
-
   db:
     image: mysql:5.7
-    container_name: website-ani-db
+    container_name: anitech-db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: secret123
-      MYSQL_DATABASE: anitech
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: moonevent
     volumes:
       - dbdata:/var/lib/mysql
     networks:
