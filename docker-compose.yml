@@ -1,46 +1,48 @@
-version: "3.8"
+version: '3.8'
 
 services:
   app:
-      build:
-        context: ./
-        dockerfile: Dockerfile
-      image: anitech
-      container_name: anitech-app
-      restart: unless-stopped
-      working_dir: /var/www/
-      volumes:
-        - ./:/var/www
-        - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
-      networks:
-        - anitech
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: laravel-app
+    container_name: website-ani-laravel
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - laravel
+
+  web:
+    image: nginx:alpine
+    container_name: website-ani-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - laravel
+
   db:
-      image: mysql:8.1
-      container_name: anitech-db
-      restart: unless-stopped
-      environment:
-        MYSQL_DATABASE: ${DB_DATABASE}
-        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-        MYSQL_PASSWORD: ${DB_PASSWORD}
-        MYSQL_USER: ${DB_USERNAME}
-        SERVICE_TAGS: dev
-        SERVICE_NAME: mysql
-      volumes:
-        - ./docker-compose/mysql:/docker-entrypoint-initdb.d
-      networks:
-        - anitech
-  nginx:
-      image: nginx:alpine
-      container_name: anitech-nginx
-      restart: unless-stopped
-      ports:
-        - 80:80
-      volumes:
-        - ./:/var/www
-        - ./docker-compose/nginx:/etc/nginx/conf.d
-      networks:
-        - anitech
+    image: mysql:5.7
+    container_name: website-ani-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: secret123
+      MYSQL_DATABASE: anitech
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - laravel
 
 networks:
-  anitech:
+  laravel:
     driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
