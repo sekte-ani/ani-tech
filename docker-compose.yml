@@ -31,7 +31,7 @@ services:
     networks:
       - laravel
 
-    certbot:
+  certbot:
       image: certbot/certbot
       container_name: website-ani-certbot
       volumes: 
