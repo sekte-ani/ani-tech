@@ -46,6 +46,7 @@ COPY . .
 
 # Install dependencies NPM dan jalankan build
 RUN npm install
+RUN npm run build
 
 # Beri izin kepada direktori storage dan cache
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
