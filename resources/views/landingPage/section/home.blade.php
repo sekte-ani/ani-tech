@@ -21,7 +21,7 @@
 
         <!-- Bagian Kanan -->
         <div class="w-1/2 hidden md:flex md:justify-center">
-            <img src="{{ asset('images/home-image1.png') }}" alt="Your Image" class="w-5/6 m-auto">
+            <img src="{{ secure_asset('images/home-image1.png') }}" alt="Your Image" class="w-5/6 m-auto">
         </div>
         {{-- Wavey end --}}
 
@@ -53,38 +53,38 @@
             <div
                 class="w-full max-w-md bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2  mx-auto">
                 <a href="#">
-                    <img src="{{ asset('images/who-image1.png') }}" class="w-1/2  mx-auto py-5" />
+                    <img src="{{ secure_asset('images/who-image1.png') }}" class="w-1/2  mx-auto py-5" />
                 </a>
             </div>
             <div
                 class="w-full max-w-md bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2  mx-auto">
                 <a href="#">
-                    <img src="{{ asset('images/who-image2.png') }}" class="w-1/2  mx-auto py-5" />
+                    <img src="{{ secure_asset('images/who-image2.png') }}" class="w-1/2  mx-auto py-5" />
                 </a>
             </div>
             <div
                 class="w-full max-w-md bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2  mx-auto">
                 <a href="#">
-                    <img src="{{ asset('images/who-image3.png') }}" class="w-1/2 h-auto  mx-auto py-5" />
+                    <img src="{{ secure_asset('images/who-image3.png') }}" class="w-1/2 h-auto  mx-auto py-5" />
                 </a>
             </div>
             <!-- Posisi grid ke kanan -->
             <div
                 class="w-full max-w-md max-h-md h-full bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2 mx-auto">
                 <a href="#">
-                    <img src="{{ asset('images/who-image4.png') }}" class="w-full h-auto mx-auto py-5" />
+                    <img src="{{ secure_asset('images/who-image4.png') }}" class="w-full h-auto mx-auto py-5" />
                 </a>
             </div>
             <div
                 class="w-full max-w-md max-h-md h-full bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2 mx-auto ">
                 <a href="#">
-                    <img src="{{ asset('images/who-image5.png') }}" class="w-full h-auto  mx-auto py-5" />
+                    <img src="{{ secure_asset('images/who-image5.png') }}" class="w-full h-auto  mx-auto py-5" />
                 </a>
             </div>
             <div
                 class="w-full max-w-md max-h-md h-full bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2  mx-auto">
                 <a href="#">
-                    <img src="{{ asset('images/who-image6.png') }}" class="w-full h-auto  mx-auto py-5" />
+                    <img src="{{ secure_asset('images/who-image6.png') }}" class="w-full h-auto  mx-auto py-5" />
                 </a>
             </div>
         </div>
@@ -199,7 +199,7 @@
         <div class="flex flex-col md:flex-row items-center justify-between p-8">
             <!-- Sisi kiri (gambar) -->
             <div class="w-full md:w-1/2">
-                <img src="{{ asset('images/product-image1.png') }}" alt="Gambar" class="w-full rounded-lg">
+                <img src="{{ secure_asset('images/product-image1.png') }}" alt="Gambar" class="w-full rounded-lg">
             </div>
             <!-- Sisi kanan (teks) -->
             <div class="w-full md:w-1/2">
@@ -343,7 +343,7 @@
         <div class="flex flex-col md:flex-row justify-center items-center gap-6">
             <div class="w-full max-w-sm bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2">
                 <div class="flex flex-col items-center pb-10 pt-10">
-                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ asset('images/testi-image1.jpg') }}"
+                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ secure_asset('images/testi-image1.jpg') }}"
                         alt="Bonnie image" />
                     <h5 class="mb-1 text-xl font-medium text-primary2 dark:text-white">Bonnie Green</h5>
                     <span class="text-sm text-darkui">Information System Students</span>
@@ -369,7 +369,7 @@
 
             <div class="w-full max-w-sm bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2">
                 <div class="flex flex-col items-center pb-10 pt-10">
-                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ asset('images/testi-image1.jpg') }}"
+                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ secure_asset('images/testi-image1.jpg') }}"
                         alt="Bonnie image" />
                     <h5 class="mb-1 text-xl font-medium text-primary2 dark:text-white">Bonnie Green</h5>
                     <span class="text-sm text-darkui">Information System Students</span>
@@ -393,7 +393,7 @@
             </div>
             <div class="w-full max-w-sm bg-white border border-primary rounded-lg shadow dark:bg-dark dark:border-dark2">
                 <div class="flex flex-col items-center pb-10 pt-10">
-                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ asset('images/testi-image1.jpg') }}"
+                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ secure_asset('images/testi-image1.jpg') }}"
                         alt="Bonnie image" />
                     <h5 class="mb-1 text-xl font-medium text-primary2 dark:text-white">Bonnie Green</h5>
                     <span class="text-sm text-darkui ">Information System Students</span>
@@ -431,7 +431,7 @@
     <footer class="py-24 text-center bg-[#D9D9D9]">
         <!-- Logo -->
         <div class="mb-8">
-            <img src="{{ asset('images/logo.png') }}" class="w-24 mx-auto" alt="Logo">
+            <img src="{{ secure_asset('images/logo.png') }}" class="w-24 mx-auto" alt="Logo">
         </div>
 
         <!-- Menu -->
